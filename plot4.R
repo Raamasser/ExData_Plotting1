@@ -14,6 +14,8 @@ df2$DateTime <- strptime(paste(df2$Date,df2$Time), format = "%d/%m/%Y %H:%M:%S")
 # I set local language to English, so that x labels matches with what is requested
 Sys.setlocale("LC_TIME", "English")
 
+png("plot4.png") ## Copy my plot to a PNG file
+
 par(mfrow=c(2,2))
 
 # Create plot "Glabal Active Power" 
@@ -34,6 +36,6 @@ plot(df2$DateTime, df2$Global_reactive_power, type='l',xlab='Datetime',ylab='Glo
 par(mfrow=c(1,1))
 
 
-dev.copy(png, file = "plot4.png") ## Copy my plot to a PNG file
+# dev.copy(png, file = "plot4.png") ## Copy my plot to a PNG file
 dev.off() ## Don't forget to close the PNG device!
 
